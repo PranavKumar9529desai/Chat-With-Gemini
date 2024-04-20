@@ -1,0 +1,35 @@
+{
+    "version": 2,
+    "name": "simple-chat-applicatian-with-the-gemini-ai",
+    "builds": [
+      {
+        "src": "frontend/package.json",
+        "use": "@vercel/node",
+        "config": {
+          "entrypoint": "npm run build"
+        }
+      },
+      {
+        "src": "backend/package.json",
+        "use": "@vercel/node",
+        "config": {
+          "entrypoint": "node index.js"
+        }
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "backend/$1"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "frontend/$1"
+      }
+    ],
+    "env": {
+      "API_KEY": "@api_key",
+      "VITE_BACKEND_URL": "@vite_backend_url",
+      "FRONTEND_URL": "@frontend_url"
+    }
+  }

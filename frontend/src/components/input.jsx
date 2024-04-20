@@ -6,7 +6,7 @@ import { LoadingSpinner } from "./ui/loading";
 import ReactMarkdown from 'react-markdown';
 import { TypographyH1 } from "./ui/typography";
 
-
+// TODO clear the input after new messge
 export function TextareaWithButton() {
     const [Input , setInput ] = useState('');
     const [Info , setInfo] = useState(''); 
@@ -21,7 +21,7 @@ export function TextareaWithButton() {
         try {
             // import.meta.env.VITE_SOME_KEY
             // http://localhost:3000/api/v1/user/chat'
-            const response = await axios.post(import.meta.env.VITE_BACKEND_URL, { prompt : Input}) ;
+            const response = await axios.post(import.meta.env.VITE_BACKEND_URL || "http://localhost:3000/api/v1/user/chat" , { prompt : Input}) ;
             console.log(response);
             const resfromGemini = await response.data.response ;
             console.log(resfromGemini);

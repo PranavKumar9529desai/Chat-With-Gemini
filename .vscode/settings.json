@@ -1,0 +1,20 @@
+{
+    "todohighlight.keywords": [
+
+
+    ],
+    "todohighlight.include": [
+
+        "**/*.js",
+        "**/*.jsx",
+        "**/*.ts",
+        "**/*.tsx",
+        "**/*.html",
+        "**/*.php",
+        "**/*.css",
+        "**/*.scss"
+    ],
+    "todohighlight.defaultStyle": {
+        
+    }
+}
