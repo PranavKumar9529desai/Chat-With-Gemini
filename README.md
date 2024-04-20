@@ -1,6 +1,6 @@
 # Chat with google's Gemini with the simplest UI possible.
 
-## Technology usesd : 
+## Technologies usesd : 
 1) React
 2) Twailwind
 3) ShadCN
