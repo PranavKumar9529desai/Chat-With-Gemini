@@ -1,4 +1,4 @@
-* chat with google's gemini with the simplest ui possible out their.
+***chat with google's gemini with the simplest ui possible out their.
 *** react with shadCN
 
 here is the ui
