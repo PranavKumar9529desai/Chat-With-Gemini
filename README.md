@@ -11,5 +11,5 @@
 
 # UI
 
-![Screenshot_20-4-2024_17310_localhost](https://github.com/PranavKumar9529desai/Chat-With-Gemini/assets/120007288/5ed00e5c-8824-4d40-8cd9-a38c2187a7dc)
+![screencapture-chat-with-gemini-frontend-vercel-app-2024-04-20-19_43_06 (1)](https://github.com/PranavKumar9529desai/Chat-With-Gemini/assets/120007288/d010c968-27b8-461b-9d10-fa622df7785c)
 
