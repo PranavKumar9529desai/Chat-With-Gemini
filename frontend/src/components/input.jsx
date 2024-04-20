@@ -41,7 +41,7 @@ export function TextareaWithButton() {
             <Textarea placeholder="Enter your prompt" value={Input}  onChange=               {handleInputChange} />
             <Button className= "w-full justify-self-center"onClick={handleClick}>Send message</Button>
             {/* render it on the bascis of the isLoading */}
-            {isLoading ?  <LoadingSpinner />  : <div className="leading-loose text-left pl-10 pr-10"><ReactMarkdown>{Info}</ReactMarkdown></div> }
+            {isLoading ?  <LoadingSpinner  />  : <div className="leading-loose text-left pl-10 pr-10"><ReactMarkdown>{Info}</ReactMarkdown></div> }
         </div>
       </>
 
