@@ -4,6 +4,7 @@ import { useState } from "react"
 import axios from "axios";
 import { LoadingSpinner } from "./ui/loading";
 import ReactMarkdown from 'react-markdown';
+import { TypographyH1 } from "./ui/typography";
 
 
 export function TextareaWithButton() {
@@ -18,7 +19,9 @@ export function TextareaWithButton() {
     const handleClick = async () =>{
         setIsLoading(true);
         try {
-            const response = await axios.post('http://localhost:3000/api/v1/user/chat', { prompt : Input}) ;
+            // import.meta.env.VITE_SOME_KEY
+            // http://localhost:3000/api/v1/user/chat'
+            const response = await axios.post(import.meta.env.VITE_BACKEND_URL, { prompt : Input}) ;
             console.log(response);
             const resfromGemini = await response.data.response ;
             console.log(resfromGemini);
@@ -32,14 +35,15 @@ export function TextareaWithButton() {
             setIsLoading(false);
         }
     }
-  return (
-    <div className="grid w-full gap-2">
-      <Textarea placeholder="Enter your prompt" value={Input} onChange={handleInputChange} />
-      <Button onClick={handleClick}>Send message</Button>
-      {/* render it on the bascis of the isLoading */}
-      {isLoading ?  <LoadingSpinner />  : <div className="leading-loose text-left pl-10"><ReactMarkdown>{Info}</ReactMarkdown></div> }
+  return (<>
+    < TypographyH1 />
+        <div className="grid w-full gap-2 mt-10 ">
+            <Textarea placeholder="Enter your prompt" value={Input}  onChange=               {handleInputChange} />
+            <Button className= "w-full justify-self-center"onClick={handleClick}>Send message</Button>
+            {/* render it on the bascis of the isLoading */}
+            {isLoading ?  <LoadingSpinner />  : <div className="leading-loose text-left pl-10 pr-10"><ReactMarkdown>{Info}</ReactMarkdown></div> }
+        </div>
+      </>
 
-
-    </div>
   )
 }
